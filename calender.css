@@ -1,0 +1,142 @@
+/* Calendar Stylesheet */
+.container {
+    border: none;
+    border-radius: 1em;
+    margin-bottom: 20px;
+    padding: min(3em, 15%);
+
+
+    h2,
+    p {
+        margin-top: 1em
+    }
+
+}
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-image: url("background.jpg");
+    background-size: cover;
+    color: var(--text-clr);
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+
+.calendar-container {
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+    border-radius: 20px;
+    box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.6); /* neon white glow */
+    backdrop-filter: blur(10px); /* blur effect for glassiness */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+    overflow: hidden;
+}
+
+
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+}
+
+.calendar-header button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.calendar-weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0.5rem;
+    gap: 4px;
+    color: rgb(222, 222, 222);
+}
+
+.calendar-weekdays div {
+    text-align: center;
+    font-weight: bold;
+    color: #dad9d9;
+    font-size: 0.9rem;
+}
+
+.calendar-days div {
+    text-align: center;
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    background: #fafcf800;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.calendar-days div:hover {
+    background: #e0e0e06a;
+    cursor: pointer;
+}
+
+.today {
+    background-color: #cfd7d496 !important;
+    /* Bright neon green */
+    color: #000 !important;
+    font-weight: bold;
+}
+
+.calendar-days div.selected {
+    background-color: #2945e4;
+    /* Accent color */
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+
+/* Mobile responsive tweaks */
+@media (max-width: 500px) {
+    .calendar-header h2 {
+        font-size: 1rem;
+    }
+
+    .calendar-days div,
+    .calendar-weekdays div {
+        font-size: 0.75rem;
+        padding: 0.4rem 0;
+    }
+
+    .calendar-container {
+        max-width: 95%;
+    }
+}
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 2em;
+    }
+
+    .calendar-container {
+        width: 100%;
+        max-width: none;
+        margin: 1rem auto;
+    }
+}
+#sidebar {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    border: none;
+    box-shadow: whitesmoke 0px 0px 5px 0px;
+}
+/* Needs to be debugged resposive side bar submenu */
